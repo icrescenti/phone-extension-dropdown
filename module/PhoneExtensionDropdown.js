@@ -1,9 +1,13 @@
 /**
  * Made by Ivan Crescenti
  * 
- * TODO
+ * This is a react component that allows you to select a phone extension from a dropdown menu.
+ * Work in progress.
  * 
- * Filter phone extensions by country recognition
+ * Todo:
+ * - Add a search bar to the dropdown menu
+ * - Finish recgonizer countries
+ * - Phone formats validation
  * 
  */
 
@@ -15,6 +19,9 @@ import React, { useEffect, useState } from 'react';
 import tr_nc_flag from './flags/TR_NC.png';
 import ge_ab_flag from './flags/GE_AB.png';
 import ge_os_flag from './flags/GE_OS.png';
+
+//Languages
+import en from './translations/en';
 
 const custom_flag_style = {
 	width: '18px',
@@ -28,6 +35,7 @@ const PhoneExtensionDropdown = ({
 	initialExtension,
 	TextFieldAddition,
 	recognizer = "US",
+	language = "en",
 	switchButtonStyle,
 	DropdownStyle
 }) => {
@@ -35,6 +43,13 @@ const PhoneExtensionDropdown = ({
 	//Disable translation for now
 	//var {t} = useTranslation(['countries']);
 	function t(key) {
+		if (language == "en") {
+			let aux = en[key.toUpperCase()];
+			if (aux == undefined) {
+				return key;
+			}
+			return aux;
+		}
 		return key;
 	}
 	
@@ -178,7 +193,7 @@ const PhoneExtensionDropdown = ({
 		{ code: '+385', countryCode: 'HR', flag: '🇭🇷' }, // Croatia
 		{ code: '+386', countryCode: 'SI', flag: '🇸🇮' }, // Slovenia
 		{ code: '+387', countryCode: 'BA', flag: '🇧🇦' }, // Bosnia and Herzegovina
-		{ code: '+389', countryCode: 'MK', flag: '🇲🇰' }, // Macedonia
+		{ code: '+389', countryCode: 'MK', flag: '🇲🇰' }, // North Macedonia
 		{ code: '+420', countryCode: 'CZ', flag: '🇨🇿' }, // Czech Republic
 		{ code: '+421', countryCode: 'SK', flag: '🇸🇰' }, // Slovakia
 		{ code: '+423', countryCode: 'LI', flag: '🇱🇮' }, // Liechtenstein
@@ -307,7 +322,7 @@ const PhoneExtensionDropdown = ({
 		
 
 	];
-
+		
 	// Reorder phoneExtensions to put the recognizer country at the top
 	const reorderedPhoneExtensions = React.useMemo(() => {
 		if (!recognizer) {
@@ -379,8 +394,8 @@ const PhoneExtensionDropdown = ({
 			borderRadius: '4px',
 			//background: '#fff',
 			cursor: 'pointer',
-			height: '5.3rem',
-			width: '75px',
+			height: '4rem',
+			width: '5rem',
 			...switchButtonStyle
 		}
 	}, extension.flag.includes('/') 
@@ -407,11 +422,12 @@ const PhoneExtensionDropdown = ({
 				left: 0,
 				width: '250px',
 				height: '1250px',
-				listStyle: 'none',
+				//listStyle: 'none',
 				padding: 0,
 				margin: 0,
 				border: '1px solid #ccc',
 				borderRadius: '4px',
+				textAlign: 'left',
 				//background: '#fff',
 				zIndex: 99999,
 				maxHeight: '200px',
