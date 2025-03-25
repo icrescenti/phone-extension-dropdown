@@ -9,7 +9,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
 
 //Flags images
 import tr_nc_flag from './flags/TR_NC.png';
@@ -32,7 +32,12 @@ const PhoneExtensionDropdown = ({
 	DropdownStyle
 }) => {
 	
-	var {t} = useTranslation(['countries']);
+	//Disable translation for now
+	//var {t} = useTranslation(['countries']);
+	function t(key) {
+		return key;
+	}
+	
 	const [isOpen, setIsOpen] = useState(false);
 	const [extension, setExtension] = useState({ code: '+1', countryCode: 'US', flag: '🇺🇸' });
 
