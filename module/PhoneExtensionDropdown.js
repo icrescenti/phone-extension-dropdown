@@ -366,9 +366,9 @@ const PhoneExtensionDropdown = ({
 		}
 	};
 
-	const SwitchButton = <button
-		onClick={toggleDropdown}
-		style={{
+	const SwitchButton = React.createElement('button', {
+		onClick: toggleDropdown,
+		style: {
 			padding: '8px 12px',
 			border: '1px solid #ccc',
 			borderRadius: '4px',
@@ -377,78 +377,68 @@ const PhoneExtensionDropdown = ({
 			height: '5.3rem',
 			width: '75px',
 			...switchButtonStyle
-		}}
-	>
-		{
-			extension.flag.includes('/')
-			?<div>
-				<div style={{display: 'flex', justifyContent: 'center'}}>
-					<img src={extension.flag} style={custom_flag_style} />
-				</div>
-				<span>({extension.code})</span>
-			</div>
-			:`${extension.flag} (${extension.code})`
 		}
-	</button>;
+	}, extension.flag.includes('/') 
+		? React.createElement('div', null,
+			React.createElement('div', { style: { display: 'flex', justifyContent: 'center' } },
+				React.createElement('img', { src: extension.flag, style: custom_flag_style })
+			),
+			React.createElement('span', null, `(${extension.code})`)
+		)
+		: `${extension.flag} (${extension.code})`
+	);
 
-	return (
-		<div style={{ position: 'relative', display: 'inline-block' }}>
-		
-		{TextFieldAddition == undefined
-			?SwitchButton
-			:<div style={{display: 'flex', justifyContent: 'center', gap: "5px"}}>
-				{SwitchButton}
-				{TextFieldAddition}
-			</div>
-		}
-
-		{isOpen && (
-			<ul
-				style={{
-					position: 'relative',
-					top: '100%',
-					left: 0,
-					width: '250px',
-					height: '1250px',
-					listStyle: 'none',
-					padding: 0,
-					margin: 0,
-					border: '1px solid #ccc',
-					borderRadius: '4px',
-					//background: '#fff',
-					zIndex: 99999,
-					maxHeight: '200px',
-					overflowY: 'auto',
-					...DropdownStyle
-				}}
-			>
-			{reorderedPhoneExtensions.map((extension) => (
-				<li
-					key={extension.code}
-					onClick={() => handleExtensionSelect(extension)}
-					style={{
-						padding: '8px 12px',
-						cursor: 'pointer',
-						':hover':{
-							backgroundColor: '#f0f0f0'
-						}
-					}}
-				>
-					{
-						extension.flag.includes('/')
-						?<div>
-							<div style={{display: 'flex', justifyContent: 'left'}}>
-								<img src={extension.flag} style={custom_flag_style} />
-								<span style={{marginLeft: '5px'}}>{t(extension.countryCode.toLowerCase())} {extension.code}</span>
-							</div>
-						</div>
-						:`${extension.flag} ${t(extension.countryCode.toLowerCase())} ${extension.code}`
+	return React.createElement('div', { style: { position: 'relative', display: 'inline-block' } },
+		TextFieldAddition == undefined
+			? SwitchButton
+			: React.createElement('div', { style: { display: 'flex', justifyContent: 'center', gap: "5px" } },
+				SwitchButton,
+				TextFieldAddition
+			),
+		isOpen && React.createElement('ul', {
+			style: {
+				position: 'relative',
+				top: '100%',
+				left: 0,
+				width: '250px',
+				height: '1250px',
+				listStyle: 'none',
+				padding: 0,
+				margin: 0,
+				border: '1px solid #ccc',
+				borderRadius: '4px',
+				//background: '#fff',
+				zIndex: 99999,
+				maxHeight: '200px',
+				overflowY: 'auto',
+				...DropdownStyle
+			}
+		},
+		reorderedPhoneExtensions.map((extension) => 
+			React.createElement('li', {
+				key: extension.code,
+				onClick: () => handleExtensionSelect(extension),
+				style: {
+					padding: '8px 12px',
+					cursor: 'pointer',
+					':hover': {
+						backgroundColor: '#f0f0f0'
 					}
-				</li>
-			))}
-			</ul>
-		)}
-		</div>
+				}
+			},
+			extension.flag.includes('/')
+				? React.createElement('div', null,
+					React.createElement('div', { style: { display: 'flex', justifyContent: 'left' } },
+						React.createElement('img', { src: extension.flag, style: custom_flag_style }),
+						React.createElement('span', { style: { marginLeft: '5px' } },
+							`${t(extension.countryCode.toLowerCase())} ${extension.code}`
+						)
+					)
+				)
+				: `${extension.flag} ${t(extension.countryCode.toLowerCase())} ${extension.code}`
+			)
+		)
+		)
 	);
 };
 
