@@ -1,4 +1,4 @@
-# React Hierarchy Tree
+# Phone Extension Dropdown
 
 phone-extension-dropdown is a react js library to select a phone extension on a telephone input field
 
