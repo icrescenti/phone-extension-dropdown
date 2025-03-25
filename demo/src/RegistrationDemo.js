@@ -1,66 +1,46 @@
 import React, { useState } from 'react';
-import './RegistrationDemo.css'; // Create this CSS file
+import './RegistrationDemo.css';
 import PhoneExtensionDropdown from 'phone-extension-dropdown';
 
 function RegistrationDemo() {
-	const [formData, setFormData] = useState({
-		username: '',
-		email: '',
-		password: '',
-	});
-
-	const handleChange = (e) => {
-		setFormData({ ...formData, [e.target.name]: e.target.value });
-	};
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
-    console.log('Form submitted:', formData);
-    // You can add your registration logic here
-		alert('Registration submitted! Check console for data.');
+		alert('This page is just a demo');
 	};
 
 	return (
 		<div className="registration-container">
 			<div className="registration-card">
 				<h1>Demo</h1>
-				<PhoneExtensionDropdown />
-				<form onSubmit={handleSubmit}>
-					<div className="input-group">
-						<label htmlFor="username">Username</label>
-						<input
-							type="text"
-							id="username"
-							name="username"
-							value={formData.username}
-							onChange={handleChange}
-							required
-						/>
-					</div>
-					<div className="input-group">
-						<label htmlFor="email">Email</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							value={formData.email}
-							onChange={handleChange}
-							required
-						/>
+				<div>
+					<div style={{marginBottom: "20px"}}>
+					<PhoneExtensionDropdown
+						TextFieldAddition={
+							<div className="input-group" style={{marginBottom: "0px"}}>
+								<input
+									type="text"
+									id="username"
+									name="username"
+									style={{width: '100%', height: '4rem'}}
+								/>
+							</div>
+						}
+						DropdownStyle={{
+							color: "#e0e0e0"
+						}}
+					/>
 					</div>
 					<div className="input-group">
 						<label htmlFor="password">Password</label>
 						<input
-							type="password"
+							type="text"
 							id="password"
 							name="password"
-							value={formData.password}
-							onChange={handleChange}
-							required
+							style={{width: '100%', height: '4rem'}}
 						/>
 					</div>
-					<button type="submit">Register</button>
-				</form>
+					<button onClick={handleSubmit}>Login</button>
+				</div>
 			</div>
 		</div>
 	);
