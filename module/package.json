@@ -22,9 +22,18 @@
     "extended"
   ],
   "author": "Ivan Crescenti",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/icrescenti/phone-extension-dropdown/issues"
   },
-  "homepage": "https://github.com/icrescenti/phone-extension-dropdown#readme"
+  "homepage": "https://github.com/icrescenti/phone-extension-dropdown#readme",
+  "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.24.1",
+    "@babel/preset-react": "^7.24.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "babel": {
+    "presets": ["@babel/preset-react"]
+  }
 }
