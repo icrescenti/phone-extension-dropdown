@@ -44,8 +44,13 @@ npm install phone-extension-dropdown
     - Tajik
     - Thai
     - Turkish
+    - Uzbek
+    - Vietnamese
+    - Chinese
 
 * 1.1.1: Readme created
+
+* 1.1.2: Readme added missing languages, uz, vi and zh
 
 
 ## Contributing
