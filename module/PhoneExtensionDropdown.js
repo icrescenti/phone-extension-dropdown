@@ -30,6 +30,15 @@ const custom_flag_style = {
 	margin: '3px'
 }
 
+function isEmpty(value) {
+	if (value == null || value == undefined || value == "null" || value == "undefined" || value == "" || value.length == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 const PhoneExtensionDropdown = ({ 
 	onSelect,
 	initialExtension,
@@ -39,10 +48,16 @@ const PhoneExtensionDropdown = ({
 	switchButtonStyle,
 	DropdownStyle
 }) => {
+
+	const [languageTags, setLanguageTags] = useState({});
 	
-	//Disable translation for now
-	//var {t} = useTranslation(['countries']);
 	function t(key) {
+		//Validate language
+		if (isEmpty(language)) {
+			return key;
+		}
+		
+		//Default language is english
 		if (language == "en") {
 			let aux = en[key.toUpperCase()];
 			if (aux == undefined) {
@@ -50,7 +65,14 @@ const PhoneExtensionDropdown = ({
 			}
 			return aux;
 		}
-		return key;
+		//Other languages
+		else {
+			let aux = languageTags[key.toUpperCase()];
+			if (aux == undefined) {
+				return key;
+			}
+			return aux;
+		}
 	}
 	
 	const [isOpen, setIsOpen] = useState(false);
@@ -323,6 +345,22 @@ const PhoneExtensionDropdown = ({
 
 	];
 		
+	//Import new language
+	useEffect(() => {
+		import(`./translations/${language.toLowerCase()}`)
+		.then(( imported_lib ) => {
+			const lang = imported_lib.default;
+			setLanguageTags(lang);
+		})
+		.catch((error) => {
+			console.error("Language not supported", error);
+		});
+
+		return () => {
+			//setLanguageTags({});
+		};
+	}, [language]);
+
 	// Reorder phoneExtensions to put the recognizer country at the top
 	const reorderedPhoneExtensions = React.useMemo(() => {
 		if (!recognizer) {
@@ -437,7 +475,7 @@ const PhoneExtensionDropdown = ({
 		},
 		reorderedPhoneExtensions.map((extension) => 
 			React.createElement('li', {
-				key: extension.code,
+				key: extension.countryCode,
 				onClick: () => handleExtensionSelect(extension),
 				style: {
 					padding: '8px 12px',
