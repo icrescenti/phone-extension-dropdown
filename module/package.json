@@ -1,6 +1,6 @@
 {
   "name": "phone-extension-dropdown",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Phone extension drop down with all countries and extended with some territories",
   "main": "index.js",
   "scripts": {
