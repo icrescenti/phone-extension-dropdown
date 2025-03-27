@@ -10,7 +10,10 @@ Use the package manager (npm) to install phone-extension-dropdown.
 npm install phone-extension-dropdown
 ```
 
-## Versions
+## Demo
+Check the demo [here](https://icrescenti.github.io/phone-extension-dropdown/)
+
+## Changelog
 * 1.0.0: Initian release
 
 * 1.1.0: Translations feature added, also, the following languages have been added
@@ -52,6 +55,11 @@ npm install phone-extension-dropdown
 
 * 1.1.2: Readme added missing languages, uz, vi and zh
 
+* 1.1.3: 
+    - Phone validator initial version
+    - Recgonitions of countries/territories updated (Taiwan, Kosovo, Abkhazia and South Ossetia)
+    - Kenya's recognition of Kosovo
+    - Return country code on select extension
 
 ## Contributing
 

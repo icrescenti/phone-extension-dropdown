@@ -10,6 +10,9 @@ Use the package manager (npm) to install phone-extension-dropdown.
 npm install phone-extension-dropdown
 ```
 
+## Demo
+Check the demo [here](https://icrescenti.github.io/phone-extension-dropdown/)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first

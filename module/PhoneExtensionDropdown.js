@@ -82,9 +82,9 @@ const PhoneExtensionDropdown = ({
 		{ code: '+1', countryCode: 'US', flag: '🇺🇸' }, //United States
 		{ code: '+1', countryCode: 'CA', flag: '🇨🇦' }, //Canada
 		{ code: '+7', countryCode: 'RU', flag: '🇷🇺' }, //Russia
-		{ code: '+7 840', countryCode: 'GE_AB', flag: ge_ab_flag, include: ["RU", "NI", "VE", "NR", "SY"] }, //Abkhazia
+		{ code: '+7 840', countryCode: 'GE_AB', flag: ge_ab_flag, include: ["RU", "NI", "VE", "NR", "SY"] }, //Abkhazia 25 de març de 2025
 		{ code: '+7 940', countryCode: 'GE_AB', flag: ge_ab_flag, include: ["RU", "NI", "VE", "NR", "SY"] }, //Abkhazia
-		{ code: '+7 850', countryCode: 'GE_OS', flag: ge_os_flag, include: ["RU", "NI", "VE", "NR", "SY"] }, //South Ossetia
+		{ code: '+7 850', countryCode: 'GE_OS', flag: ge_os_flag, include: ["RU", "NI", "VE", "NR", "SY"] }, //South Ossetia 25 de març de 2025
 		{ code: '+7 929', countryCode: 'GE_OS', flag: ge_os_flag, include: ["RU", "NI", "VE", "NR", "SY"] }, //South Ossetia
 		{ code: '+20', countryCode: 'EG', flag: '🇪🇬' }, //Egypt
 		{ code: '+27', countryCode: 'ZA', flag: '🇿🇦' }, //South Africa
@@ -211,7 +211,7 @@ const PhoneExtensionDropdown = ({
 		{ code: '+380', countryCode: 'UA', flag: '🇺🇦' },
 		{ code: '+381', countryCode: 'RS', flag: '🇷🇸' },
 		{ code: '+382', countryCode: 'ME', flag: '🇲🇪' },
-		{ code: '+383', countryCode: 'XK', flag: '🇽🇰', exclude: ["RS", "RU", "CN", "ES", "GR"] }, //Kosovo
+		{ code: '+383', countryCode: 'XK', flag: '🇽🇰', include: [ "CR", "AF", "AL", "FR", "SN", "TR", "GB", "US", "AU", "LV", "DE", "EE", "IT", "DK", "LU", "PE", "BE", "PL", "CH", "AT", "IE", "SE", "NL", "IS", "SI", "FI", "CA", "JP", "MC", "HU", "HR", "BG", "LI", "KR", "NO", "MH", "BF", "LT", "SM", "CZ", "LR", "CO", "BZ", "MT", "WS", "PT", "ME", "MK", "AE", "MY", "FM", "PA", "MV", "PW", "GM", "SA", "KM", "BH", "JO", "DO", "NZ", "MW", "MR", "SZ", "VU", "DJ", "SO", "HN", "KI", "TV", "QA", "GW", "OM", "AD", "GN", "NE", "BJ", "LC", "GA", "CI", "KW", "HT", "BN", "TD", "TL", "FJ", "KN", "PK", "TZ", "GY", "YE", "EG", "TH", "GD", "LY", "TO", "LS", "SV", "AG", "SR", "SG", "BD", "BB", "IL", "KE" ] }, //Kosovo
 		{ code: '+385', countryCode: 'HR', flag: '🇭🇷' }, // Croatia
 		{ code: '+386', countryCode: 'SI', flag: '🇸🇮' }, // Slovenia
 		{ code: '+387', countryCode: 'BA', flag: '🇧🇦' }, // Bosnia and Herzegovina
@@ -271,7 +271,7 @@ const PhoneExtensionDropdown = ({
 		{ code: '+881', countryCode: 'GMSS', flag: '🛰️' }, // Global Mobile Satellite System
 		{ code: '+882', countryCode: 'IN', flag: '🌐' }, // International Networks
 		{ code: '+883', countryCode: 'IN', flag: '🌐' }, // International Networks
-		{ code: '+886', countryCode: 'TW', flag: '🇹🇼', include: ["BZ", "GT", "HT", "VA", "HN", "MH", "NR", "PW", "PY", "KN", "LC", "VC", "TV"] }, // Taiwan
+		{ code: '+886', countryCode: 'TW', flag: '🇹🇼', include: ["BZ", "SZ", "GT", "HT", "MH", "PW", "PY", "KN", "LC", "VC", "TV", "VA"] }, // Taiwan 2 de febrer de 2025
 		{ code: '+888', countryCode: 'QA', flag: '🇶🇦' }, // Ooredoo (Qatar)
 		{ code: '+960', countryCode: 'MV', flag: '🇲🇻' }, // Maldives
 		{ code: '+961', countryCode: 'LB', flag: '🇱🇧' }, // Lebanon
@@ -297,30 +297,30 @@ const PhoneExtensionDropdown = ({
 		{ code: '+995', countryCode: 'GE', flag: '🇬🇪' }, // Georgia
 		{ code: '+996', countryCode: 'KG', flag: '🇰🇬' }, // Kyrgyzstan
 		{ code: '+998', countryCode: 'UZ', flag: '🇺🇿' }, // Uzbekistan
-		{ code: '+1242', countryCode: 'BS', flag: '🇧🇸' }, // Bahamas
-		{ code: '+1246', countryCode: 'BB', flag: '🇧🇧' }, // Barbados
-		{ code: '+1264', countryCode: 'AI', flag: '🇦🇮' }, // Anguilla
-		{ code: '+1268', countryCode: 'AG', flag: '🇦🇬' }, // Antigua and Barbuda
-		{ code: '+1284', countryCode: 'VG', flag: '🇻🇬' }, // British Virgin Islands
-		{ code: '+1340', countryCode: 'VI', flag: '🇻🇮' }, // U.S. Virgin Islands
-		{ code: '+1345', countryCode: 'KY', flag: '🇰🇾' }, // Cayman Islands
-		{ code: '+1441', countryCode: 'BM', flag: '🇧🇲' }, // Bermuda
-		{ code: '+1473', countryCode: 'GD', flag: '🇬🇩' }, // Grenada
-		{ code: '+1649', countryCode: 'TC', flag: '🇹🇨' }, // Turks and Caicos Islands
-		{ code: '+1664', countryCode: 'MS', flag: '🇲🇸' }, // Montserrat
-		{ code: '+1670', countryCode: 'MP', flag: '🇲🇵' }, // Northern Mariana Islands
-		{ code: '+1671', countryCode: 'GU', flag: '🇬🇺' }, // Guam
-		{ code: '+1684', countryCode: 'AS', flag: '🇦🇸' }, // American Samoa
-		{ code: '+1721', countryCode: 'SX', flag: '🇸🇽' }, // Sint Maarten
-		{ code: '+1758', countryCode: 'LC', flag: '🇱🇨' }, // Saint Lucia
-		{ code: '+1767', countryCode: 'DM', flag: '🇩🇲' }, // Dominica
-		{ code: '+1784', countryCode: 'VC', flag: '🇻🇨' }, // Saint Vincent and the Grenadines
-		{ code: '+1787', countryCode: 'PR', flag: '🇵🇷' }, // Puerto Rico
-		{ code: '+1809', countryCode: 'DO', flag: '🇩🇴' }, // Dominican Republic
-		{ code: '+1829', countryCode: 'DO', flag: '🇩🇴' }, // Dominican Republic (overlapping)
-		{ code: '+1849', countryCode: 'DO', flag: '🇩🇴' }, // Dominican Republic (overlapping)
-		{ code: '+1868', countryCode: 'TT', flag: '🇹🇹' }, // Trinidad and Tobago
-		{ code: '+1869', countryCode: 'KN', flag: '🇰🇳' }, // Saint Kitts and Nevis
+		{ code: '+1 242', countryCode: 'BS', flag: '🇧🇸' }, // Bahamas
+		{ code: '+1 246', countryCode: 'BB', flag: '🇧🇧' }, // Barbados
+		{ code: '+1 264', countryCode: 'AI', flag: '🇦🇮' }, // Anguilla
+		{ code: '+1 268', countryCode: 'AG', flag: '🇦🇬' }, // Antigua and Barbuda
+		{ code: '+1 284', countryCode: 'VG', flag: '🇻🇬' }, // British Virgin Islands
+		{ code: '+1 340', countryCode: 'VI', flag: '🇻🇮' }, // U.S. Virgin Islands
+		{ code: '+1 345', countryCode: 'KY', flag: '🇰🇾' }, // Cayman Islands
+		{ code: '+1 441', countryCode: 'BM', flag: '🇧🇲' }, // Bermuda
+		{ code: '+1 473', countryCode: 'GD', flag: '🇬🇩' }, // Grenada
+		{ code: '+1 649', countryCode: 'TC', flag: '🇹🇨' }, // Turks and Caicos Islands
+		{ code: '+1 664', countryCode: 'MS', flag: '🇲🇸' }, // Montserrat
+		{ code: '+1 670', countryCode: 'MP', flag: '🇲🇵' }, // Northern Mariana Islands
+		{ code: '+1 671', countryCode: 'GU', flag: '🇬🇺' }, // Guam
+		{ code: '+1 684', countryCode: 'AS', flag: '🇦🇸' }, // American Samoa
+		{ code: '+1 721', countryCode: 'SX', flag: '🇸🇽' }, // Sint Maarten
+		{ code: '+1 758', countryCode: 'LC', flag: '🇱🇨' }, // Saint Lucia
+		{ code: '+1 767', countryCode: 'DM', flag: '🇩🇲' }, // Dominica
+		{ code: '+1 784', countryCode: 'VC', flag: '🇻🇨' }, // Saint Vincent and the Grenadines
+		{ code: '+1 787', countryCode: 'PR', flag: '🇵🇷' }, // Puerto Rico
+		{ code: '+1 809', countryCode: 'DO', flag: '🇩🇴' }, // Dominican Republic
+		{ code: '+1 829', countryCode: 'DO', flag: '🇩🇴' }, // Dominican Republic (overlapping)
+		{ code: '+1 849', countryCode: 'DO', flag: '🇩🇴' }, // Dominican Republic (overlapping)
+		{ code: '+1 868', countryCode: 'TT', flag: '🇹🇹' }, // Trinidad and Tobago
+		{ code: '+1 869', countryCode: 'KN', flag: '🇰🇳' }, // Saint Kitts and Nevis
 		{ code: '+500', countryCode: 'FK', flag: '🇫🇰' }, // Falkland Islands (Malvinas)
 		{ code: '+508', countryCode: 'PM', flag: '🇵🇲' }, // Saint Pierre and Miquelon
 		{ code: '+599', countryCode: 'CW', flag: '🇨🇼' }, // Curacao
@@ -420,7 +420,7 @@ const PhoneExtensionDropdown = ({
 		setExtension(extension);
 		setIsOpen(false);
 		if (onSelect && typeof onSelect == 'function') {
-			onSelect(extension.code);
+			onSelect(extension.code, extension.countryCode);
 		}
 	};
 
